@@ -1,40 +1,48 @@
 # spring profile arg
 -Dspring.profiles.active=test
 
-# ----------------------------------
+# Requisitos:
+<li>MARIADB ou H2;
+<li>Maven para gerenciar dependencias;
+<li>Linguagem - Java;
+<li>Para escrever doc. - BDD + Cucumber gerkhin;
+<li>Automatizar test interface web - selenium
+<li>Design patter - page-object
+
 
 # MARIADB
-# https://downloads.mariadb.com/MariaDB/
-# rodar mariadb no windows (a partir da pasta bin do mariadb)
 
-mysqld.exe --console
+## https://downloads.mariadb.com/MariaDB/
+
+<p>rodar mariadb no windows (a partir da pasta bin do mariadb)</p>
+
+</p>mysqld.exe --console</p>
 
 # para se conectar com mariadb (a partir da pasta bin do mariadb)
-mysql -u root
+<p>mysql -u root</p>
 
-create database leilao;
+<p>create database leilao;</p>
 
-------
 
 # MAVEN
-# https://maven.apache.org/download.cgi
+## https://maven.apache.org/download.cgi
 
-# rodando testes com maven na linha de comando (default profile é test)
-# apenas testes de unidade
-mvn test
+<p>Rodando testes com maven na linha de comando (default profile é test) apenas testes de unidade</p>
 
-# testes de integracao
+<p>mvn test</p>
+
+## Testes de integracao
 mvn test-integration
 
-# para alterar o profile
+## Para alterar o profile
 mvn test -Pprod
 
-# para usar chrome driver (firefox é padrao)
+## Para usar chrome driver (firefox é padrao)
 
 mvn integration-test -Ddriver=chrome
 mvn integration-test -Dcucumber.filter.tags="@login or @lance"
 
--------
+
 
 # DOCKER
 # para subir mariadb com docker (a partir local do docker-compose.yml)
